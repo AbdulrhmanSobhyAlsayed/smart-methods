@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel</title>
+    <!-- custom css files   -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    <button class="remote" type="button" id="remote-control">
+        <img src="elements/joystick.png" class="remote-img">
+    </button>
+    <button class="remote" type="button" id="remote-stop">
+        <img src="elements/forbidden.png" class="remote-img">
+    </button>
+    <button  type="button" id="remote-up" class="remote">
+        <img src="elements/control.png" class="remote-img">
+    </button>
+    <button  type="button" id="remote-down" class="remote">
+        <img src="elements/down-arrow.png" class="remote-img">
+    </button>
+    <button  type="button" id="remote-left" class="remote">
+        <img src="elements/next%20(1).png" class="remote-img">
+    </button>
+    <button  type="button" id="remote-right" class="remote">
+        <img src="elements/back.png" class="remote-img">
+    </button>
+    <!-- JQuery file   -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on('click','#remote-control',function () {
+                let top=$('#remote-control').position().top;
+                let left=$('#remote-control').position().left;
+                let extra=$('#remote-control').outerWidth(true)*2+20;
+                $('#remote-control').hide();
+                $('#remote-stop').show();
+                $('#remote-up').show().css('top',top-extra).css('left',left);
+                $('#remote-down').show().css('top',top+extra+10).css('left',left);
+                $('#remote-left').show().css('top',top).css('left',left+extra+5);
+                $('#remote-right').show().css('top',top).css('left',left-extra);
+
+
+            });
+            $(document).on('click','#remote-stop',function () {
+                $('#remote-stop').hide();
+                $('#remote-up').hide();
+                $('#remote-down').hide();
+                $('#remote-left').hide();
+                $('#remote-right').hide();
+                $('#remote-control').show();
+            });
+        });
+    </script>
+</body>
+</html>

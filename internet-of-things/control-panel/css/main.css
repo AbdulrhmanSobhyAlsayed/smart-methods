@@ -1,0 +1,49 @@
+/*set the background of index page */
+html {
+    min-height:100%;
+    background:url(../elements/control-panel-bg.jpg) rgba(0, 0, 0,0.5);
+    background-size:cover;
+    background-blend-mode: multiply;
+}
+.remote{
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    height:160px;
+    width: 160px;
+    background-color: #EDF2F4;
+    display: inline;
+    cursor: pointer;
+    margin-left:-80px ;
+    margin-top:-80px ;
+}
+.remote-img{
+    width: 100px;
+    height: 100px;
+}
+@media (max-width: 600px) {
+    .remote{
+        height:80px;
+        width: 80px;
+        margin-left:-40px ;
+        margin-top:-40px ;
+    }
+    .remote-img{
+        width: 50px;
+        height: 50px;
+    }
+}
+.remote:hover{
+    background-color: #8D99AE ;
+    transform:scale(1.1);
+}
+
+#remote-control,#remote-stop{
+    top: 50%;
+    left: 50%;
+}
+#remote-right, #remote-left, #remote-down,#remote-up,#remote-stop{
+    display: none;
+}
+
+
